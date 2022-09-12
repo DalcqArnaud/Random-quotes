@@ -24,8 +24,8 @@ function Modal(props) {
 
     return ( 
         <div className='modal'>
-            <input type="textarea" defaultValue={props.quoteTxt} onChange={handleChange}/>
-            <div className='btnContainer'>
+            <textarea className='modalQuote' rows='5' defaultValue={props.quoteTxt} onChange={handleChange}/>
+            <div className='modalBtnContainer'>
                 <button className='btn' onClick={cancel}>Cancel</button>
                 <button className='btn' onClick={confirm}>Confirm</button>
             </div>

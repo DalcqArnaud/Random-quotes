@@ -10,7 +10,8 @@ function App() {
   var quotesArray = [];
   var randomQuoteIndex = 0;
   
-  const [quote, setQuote] = useState("This is the default quote. - Default Author");
+  const [quote, setQuote] = useState('"This is the default quote."');
+  const [author, setAuthor] = useState("- Default Author");
   const [modalIsOpen, setModalIsOpen] = useState(false);
   
   useEffect(() => {
@@ -23,8 +24,10 @@ function App() {
     .then(data => {
       quotesArray = data;
       randomQuoteIndex = Math.round(Math.random() * quotesArray.length)
-      let quoteText = quotesArray[randomQuoteIndex].text + " - " + (quotesArray[randomQuoteIndex].author == null ? "Unknown author" : quotesArray[randomQuoteIndex].author);
+      let quoteText = '"' + quotesArray[randomQuoteIndex].text + '"';
+      let authorText = " - " + (quotesArray[randomQuoteIndex].author == null ? "Unknown author" : quotesArray[randomQuoteIndex].author);
       setQuote(quoteText);
+      setAuthor(authorText);
     });
   }
 
@@ -43,9 +46,12 @@ function App() {
 
   return (
     <div className='quoteContainer'>
-      <Quote quoteTxt={quote}/>
-      <button className='btn' onClick={generate}>Generate</button>
-      <button className='btn' onClick={edit}>Edit</button>
+      <p id='mainTitle'>Quotes Randomizer</p>
+      <Quote quoteTxt={quote} authorTxt={author}/>
+      <div className='btnContainer'>
+        <button className='btn' onClick={generate}>Generate</button>
+        <button className='btn' onClick={edit}>Edit</button>
+      </div>
       { modalIsOpen ? <Modal quoteTxt={quote} onCancel={closeModal} childToParent={childToParent}/> : null }
       { modalIsOpen ? <Backdrop close={closeModal}/> : null }
     </div>
