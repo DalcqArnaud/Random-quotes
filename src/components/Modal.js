@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+
 function Modal(props) {
     function cancel(){
-        console.log("Canceled");
         props.onCancel();
     }
     
@@ -34,13 +37,13 @@ function Modal(props) {
 
     return ( 
         <div className='modal'>
-            <p>Quote :</p>
+            <p className='modalTitle'>Quote :</p>
             <textarea className='modalQuote' rows='5' defaultValue={props.quoteTxt} onChange={handleQuoteChange}/>
-            <p>Author :</p>
+            <p className='modalTitle'>Author :</p>
             <textarea className='modalQuote' rows='1' defaultValue={props.authorTxt} onChange={handleAuthorChange}/>
             <div className='modalBtnContainer'>
-                <button className='btn' onClick={cancel}>Cancel</button>
-                <button className='btn' onClick={confirm}>Confirm</button>
+                <button className='modalBtn' id='modalCancelBtn' onClick={cancel}>Cancel <FontAwesomeIcon icon={faXmark} /></button>
+                <button className='modalBtn' id='modalConfirmBtn' onClick={confirm}>Confirm <FontAwesomeIcon icon={faCheck} /></button>
             </div>
         </div>
     );

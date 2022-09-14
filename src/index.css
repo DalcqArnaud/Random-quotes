@@ -21,7 +21,7 @@ body{
     grid-row: 1/1;
     grid-column: 2/2;
     font-family: 'Satisfy', cursive;
-    font-size: 300%;
+    font-size: 500%;
     text-align: center;
     margin: 0;
 }
@@ -46,14 +46,12 @@ body{
 .modal {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
     border-radius: 6px;
-    background-color: white;
-    padding: 1rem;
+    background-color: #d1edbf;
     text-align: center;
-    width: 30rem;
+    width: 50%;
     z-index: 10;
     position: fixed;
-    margin-top: auto;
-    left: calc(50% - 15rem);
+    margin: auto;
 }
 
 .backdrop {
@@ -67,12 +65,26 @@ body{
 }
 
 .modalBtnContainer{
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 20% 1fr 20% 1fr;
 }
 
 .modalQuote{
     width: 80%;
     resize: vertical;
+    background-color: #ffe7ab;
+    color: #24282c;
+    font-size: large;
+}
+
+.modalTitle{
+    color: #24282c;
+    font-size: x-large;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 5px;
 }
 
 .quoteContentText{
@@ -104,6 +116,141 @@ body{
     box-shadow: none;
 }
 
-.btnIcon{
-    margin-left: 5px;
+.modalBtn{
+    text-align: center;
+    background-color: #24282c;
+    color: aliceblue;
+    font-size: large;
+    border-style: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    box-shadow: 5px 5px 10px -2px #20251E;
+}
+
+.modalBtn:active{
+    box-shadow: none;
+}
+
+#modalCancelBtn{
+    grid-column: 2/2;
+}
+
+#modalConfirmBtn{
+    grid-column: 4/4;
+}
+
+@media screen and (max-width: 380px){
+    .quoteContentText{
+        font-family: 'Satisfy', cursive;
+        font-size: 125%;
+        margin: 0;
+        margin-left: 10%;
+        padding: 6% 2% 6% 2%;
+        line-height: 125%;
+        border-left: solid rgb(212, 125, 125) 3px;
+    }
+
+    #mainTitle{
+        grid-row: 1/1;
+        grid-column: 2/2;
+        font-family: 'Satisfy', cursive;
+        font-size: 300%;
+        text-align: center;
+        margin: 0;
+    }
+
+    .modal {
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 6px;
+        background-color: #d1edbf;
+        text-align: center;
+        width: 90%;
+        z-index: 10;
+        position: fixed;
+        margin: auto;
+    }
+
+    .modalBtnContainer{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: grid;
+        grid-template-columns: 1fr 40% 1fr 40% 1fr;
+    }
+
+    .modalQuote{
+        width: 85%;
+        resize: vertical;
+        background-color: #ffe7ab;
+        color: #24282c;
+        font-size: medium;
+    }
+
+    .btn{
+        text-align: center;
+        background-color: #24282c;
+        color: aliceblue;
+        font-size: 90%;
+        border-style: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        box-shadow: 5px 5px 10px -2px #20251E;
+    }
+    
+    .btn:active{
+        box-shadow: none;
+    }
+
+    .modalBtn{
+        text-align: center;
+        background-color: #24282c;
+        color: aliceblue;
+        font-size: 90%;
+        border-style: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        box-shadow: 5px 5px 10px -2px #20251E;
+    }
+    
+    .modalBtn:active{
+        box-shadow: none;
+    }
+}
+
+@media screen and (min-width: 380px) and (max-width: 768px){
+    .quoteContentText{
+        font-family: 'Satisfy', cursive;
+        font-size: 175%;
+        margin: 0;
+        margin-left: 10%;
+        padding: 6% 2% 6% 2%;
+        line-height: 125%;
+        border-left: solid rgb(212, 125, 125) 3px;
+    }
+
+    #mainTitle{
+        grid-row: 1/1;
+        grid-column: 2/2;
+        font-family: 'Satisfy', cursive;
+        font-size: 400%;
+        text-align: center;
+        margin: 0;
+    }
+
+    .modal {
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 6px;
+        background-color: #d1edbf;
+        text-align: center;
+        width: 75%;
+        z-index: 10;
+        position: fixed;
+        margin: auto;
+    }
+
+    .modalBtnContainer{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: grid;
+        grid-template-columns: 1fr 25% 1fr 25% 1fr;
+    }
 }
