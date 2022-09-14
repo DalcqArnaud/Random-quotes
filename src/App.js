@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import {AiFillEdit} from 'react-icons/ai';
-import {GiPerspectiveDiceSixFacesThree} from 'react-icons/gi';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
+import { faDice } from '@fortawesome/free-solid-svg-icons'
 
 import Quote from './components/Quote'
 import Modal from './components/Modal';
@@ -108,8 +110,8 @@ function App() {
       <p id='mainTitle'>"Quotes Randomizer"</p>
       <Quote quoteTxt={quote} authorTxt={author}/>
       <div className='btnContainer'>
-        <button className='btn' onClick={generate}><span className='btnContent'>Generate <GiPerspectiveDiceSixFacesThree className='btnIcon'/></span></button>
-        <button className='btn' onClick={edit}><span className='btnContent'>Edit <AiFillEdit className='btnIcon'/></span></button>
+        <button className='btn' onClick={generate}><span className='btnContent'>Generate <FontAwesomeIcon icon={faDice} /></span></button>
+        <button className='btn' onClick={edit}><span className='btnContent'>Edit <FontAwesomeIcon icon={faPenToSquare} /></span></button>
       </div>
       { modalIsOpen ? <Modal quoteTxt={quoteString} authorTxt={authorString} onCancel={closeModal} editedQuote={editedQuote} editedAuthor={editedAuthor}/> : null }
       { modalIsOpen ? <Backdrop close={closeModal}/> : null }

@@ -10,7 +10,7 @@ body{
 
 .quoteContainer{
     display: grid;
-    grid-template-columns: 1fr 50% 1fr;
+    grid-template-columns: 1fr 75% 1fr;
     grid-template-rows: 1fr 50% 1fr;
     justify-items: center;
     align-items: center;
@@ -22,15 +22,20 @@ body{
     grid-column: 2/2;
     font-family: 'Satisfy', cursive;
     font-size: 300%;
+    text-align: center;
+    margin: 0;
 }
 
 #mainQuote{
     grid-row: 2/2;
     grid-column: 2/2;
+    width: 100%;
+    background-color: #ffe7ab;
+    box-shadow: 5px 5px 10px -2px #20251E;
 }
 
 .btnContainer{
-    align-self: baseline;
+    align-self: center;
     grid-row: 3/3;
     grid-column: 2/2;
     display: grid;
@@ -70,34 +75,18 @@ body{
     resize: vertical;
 }
 
-.quoteContent{
-    position: relative;
-    width: 416px;
-    height: 208px;
-}
-
 .quoteContentText{
     font-family: 'Satisfy', cursive;
-    font-size: 100%;
-    padding-left: 72px;
-    padding-top: 56px;
-    padding-right: 5px;
+    font-size: 175%;
+    margin: 0;
+    margin-left: 10%;
+    padding: 6% 2% 6% 2%;
     line-height: 125%;
+    border-left: solid rgb(212, 125, 125) 3px;
 }
 
 #authorTxt{
     font-weight: bold;
-}
-
-.quoteContentImage{
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    width: 100%;
-    height: 208px;
-    background-image: url(images/YellowPaper.jpg);
-    background-repeat: no-repeat;
-    box-shadow: 5px 5px 10px -2px #20251E;
 }
 
 .btn{
