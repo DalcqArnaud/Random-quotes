@@ -20,6 +20,7 @@ body{
 #mainTitle{
     grid-row: 1/1;
     grid-column: 2/2;
+    font-family: 'Satisfy', cursive;
     font-size: 300%;
 }
 
@@ -29,8 +30,12 @@ body{
 }
 
 .btnContainer{
+    align-self: baseline;
     grid-row: 3/3;
     grid-column: 2/2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
 }
 
 .modal {
@@ -92,4 +97,24 @@ body{
     height: 208px;
     background-image: url(images/YellowPaper.jpg);
     background-repeat: no-repeat;
+    box-shadow: 5px 5px 10px -2px #20251E;
+}
+
+.btn{
+    text-align: center;
+    background-color: #24282c;
+    color: aliceblue;
+    font-size: large;
+    border-style: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    box-shadow: 5px 5px 10px -2px #20251E;
+}
+
+.btn:active{
+    box-shadow: none;
+}
+
+.btnIcon{
+    margin-left: 5px;
 }

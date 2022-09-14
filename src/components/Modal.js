@@ -7,24 +7,37 @@ function Modal(props) {
     }
     
     function confirm(){
-        console.log("Confirmed");
         if(newQuote === "" || newQuote === null){
             console.log("new Quote not valid");
         }
         else{
-            props.childToParent(newQuote);
+            props.editedQuote(newQuote);
+        }
+
+        if(newAuthor === "" || newAuthor === null){
+            console.log("new Author not valid");
+        }
+        else{
+            props.editedAuthor(newAuthor);
         }
     }
 
-    const [newQuote, setNewQuote] = useState('newQuote');
-    const handleChange = event => {
+    const [newQuote, setNewQuote] = useState(props.quoteTxt);
+    const handleQuoteChange = event => {
         setNewQuote(event.target.value);
-        console.log('value is:', event.target.value);
+    }
+
+    const [newAuthor, setNewAuthor] = useState(props.authorTxt);
+    const handleAuthorChange = event => {
+        setNewAuthor(event.target.value);
     }
 
     return ( 
         <div className='modal'>
-            <textarea className='modalQuote' rows='5' defaultValue={props.quoteTxt} onChange={handleChange}/>
+            <p>Quote :</p>
+            <textarea className='modalQuote' rows='5' defaultValue={props.quoteTxt} onChange={handleQuoteChange}/>
+            <p>Author :</p>
+            <textarea className='modalQuote' rows='1' defaultValue={props.authorTxt} onChange={handleAuthorChange}/>
             <div className='modalBtnContainer'>
                 <button className='btn' onClick={cancel}>Cancel</button>
                 <button className='btn' onClick={confirm}>Confirm</button>
